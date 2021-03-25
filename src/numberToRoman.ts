@@ -5,6 +5,10 @@ export function numberToRoman(numero: number): string {
     return "IV";
   }
 
+  if (numero === 5) {
+    return "V";
+  }
+
   for (let i = 0; i < numero; i++) {
     romanNumber += "I";
   }

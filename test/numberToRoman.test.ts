@@ -16,4 +16,8 @@ describe("Número a romano", () => {
   it("devuelve IV para el número natural 4", () => {
     expect(numberToRoman(4)).toBe("IV");
   });
+
+  it("devuelve V para el número natural 5", () => {
+    expect(numberToRoman(5)).toBe("V");
+  });
 });
