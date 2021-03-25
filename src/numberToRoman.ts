@@ -1,6 +1,8 @@
 export function numberToRoman(numero: number): string {
-  if (numero === 2) {
-    return "II";
+  let romanNumber = "";
+  for (let i = 0; i < numero; i++) {
+    romanNumber += "I";
   }
-  return "I";
+
+  return romanNumber;
 }
