@@ -10,12 +10,18 @@ export function numberToRoman(numero: number): string {
     romanNumber = "V";
   }
 
-  if (numero === 10) {
-    return "X";
+  if (numero >= 10) {
+    start = 10;
+    romanNumber = "X";
   }
-  for (let i = start; i < numero; i++) {
+
+  return addStick(romanNumber, numero, start);
+}
+
+const addStick = (romanNumber: string, integerValue: number, start: number) => {
+  for (let i = start; i < integerValue; i++) {
     romanNumber += "I";
   }
 
   return romanNumber;
-}
+};
