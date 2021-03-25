@@ -12,4 +12,8 @@ describe("Número a romano", () => {
   it("debe convertir el número 3 a III", () => {
     expect(numberToRoman(3)).toBe("III");
   });
+
+  it("devuelve IV para el número natural 4", () => {
+    expect(numberToRoman(4)).toBe("IV");
+  });
 });
