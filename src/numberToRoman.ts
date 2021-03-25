@@ -5,20 +5,15 @@ export function numberToRoman(numero: number): string {
     return "IV";
   }
 
-  if (numero === 5) {
-    return "V";
-  }
-
-  if (numero === 6) {
-    return "VI";
-  }
-
-  if (numero === 7) {
-    return "VII";
-  }
-
-  for (let i = 0; i < numero; i++) {
-    romanNumber += "I";
+  if (numero >= 5) {
+    romanNumber = "V";
+    for (let i = 5; i < numero; i++) {
+      romanNumber += "I";
+    }
+  } else {
+    for (let i = 0; i < numero; i++) {
+      romanNumber += "I";
+    }
   }
 
   return romanNumber;

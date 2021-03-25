@@ -9,6 +9,7 @@ describe("Número a romano", () => {
     [5, "V"],
     [6, "VI"],
     [7, "VII"],
+    [8, "VIII"],
   ])("debe convertir el número %d a %s", (value, expected) => {
     expect(numberToRoman(value)).toBe(expected);
   });
