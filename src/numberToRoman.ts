@@ -9,6 +9,10 @@ export function numberToRoman(numero: number): string {
     start = 5;
     romanNumber = "V";
   }
+
+  if (numero === 10) {
+    return "X";
+  }
   for (let i = start; i < numero; i++) {
     romanNumber += "I";
   }
