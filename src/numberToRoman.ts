@@ -22,6 +22,11 @@ export function numberToRoman(numero: number): string {
     romanNumber += "X";
   }
 
+  if (numero == 9) {
+    numero = numero - 9;
+    romanNumber += "IX";
+  }
+
   if (numero >= 5) {
     numero = numero - 5;
     romanNumber += "V";
