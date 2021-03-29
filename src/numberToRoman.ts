@@ -2,6 +2,11 @@ export function numberToRoman(numero: number): string {
   let romanNumber = "";
   let start = 0;
 
+  if (numero >= 900) {
+    numero -= 900;
+    romanNumber += "CM";
+  }
+
   if (numero >= 500) {
     numero -= 500;
     romanNumber += "D";

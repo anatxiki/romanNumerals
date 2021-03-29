@@ -25,6 +25,9 @@ describe("Número a romano", () => {
     [340, "CCCXL"],
     [400, "CD"],
     [500, "D"],
+    [666, "DCLXVI"],
+    [817, "DCCCXVII"],
+    [919, "CMXIX"],
   ])("debe convertir el número %d a %s", (value, expected) => {
     expect(numberToRoman(value)).toBe(expected);
   });
