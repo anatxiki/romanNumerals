@@ -3,10 +3,8 @@ export function numberToRoman(numero: number): string {
   let start = 0;
 
   while (numero >= 10) {
-    if (numero >= 10) {
-      numero = numero - 10;
-      romanNumber += "X";
-    }
+    numero -= 10;
+    romanNumber += "X";
   }
   if (numero >= 5) {
     numero = numero - 5;
