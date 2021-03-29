@@ -2,6 +2,11 @@ export function numberToRoman(numero: number): string {
   let romanNumber = "";
   let start = 0;
 
+  if (numero >= 50) {
+    numero -= 50;
+    romanNumber += "L";
+  }
+
   if (numero >= 40) {
     numero -= 40;
     romanNumber += "XL";
