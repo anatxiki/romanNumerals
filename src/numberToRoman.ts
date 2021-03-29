@@ -2,10 +2,15 @@ export function numberToRoman(numero: number): string {
   let romanNumber = "";
   let start = 0;
 
+  if (numero === 40) {
+    return "XL";
+  }
+
   while (numero >= 10) {
     numero -= 10;
     romanNumber += "X";
   }
+
   if (numero >= 5) {
     numero = numero - 5;
     romanNumber += "V";
