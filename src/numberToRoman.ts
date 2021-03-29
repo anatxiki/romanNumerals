@@ -23,17 +23,17 @@ export function numberToRoman(numero: number): string {
   }
 
   if (numero == 9) {
-    numero = numero - 9;
+    numero -= 9;
     romanNumber += "IX";
   }
 
   if (numero >= 5) {
-    numero = numero - 5;
+    numero -= 5;
     romanNumber += "V";
   }
 
   if (numero === 4) {
-    numero = numero - 4;
+    numero -= 4;
     romanNumber += "IV";
   }
 
