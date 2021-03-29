@@ -2,8 +2,9 @@ export function numberToRoman(numero: number): string {
   let romanNumber = "";
   let start = 0;
 
-  if (numero === 40) {
-    return "XL";
+  if (numero >= 40) {
+    numero -= 40;
+    romanNumber += "XL";
   }
 
   while (numero >= 10) {
