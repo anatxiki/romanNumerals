@@ -5,14 +5,15 @@ export function numberToRoman(numero: number): string {
   if (numero === 4) {
     return "IV";
   }
-  if (numero >= 5) {
-    start = 5;
-    romanNumber = "V";
-  }
 
   if (numero >= 10) {
-    start = 10;
+    numero = numero - 10;
     romanNumber = "X";
+  }
+
+  if (numero >= 5) {
+    numero = numero - 5;
+    romanNumber += "V";
   }
 
   return addStick(romanNumber, numero, start);
