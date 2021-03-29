@@ -2,10 +2,6 @@ export function numberToRoman(numero: number): string {
   let romanNumber = "";
   let start = 0;
 
-  if (numero === 4) {
-    return "IV";
-  }
-
   if (numero >= 10) {
     numero = numero - 10;
     romanNumber = "X";
@@ -14,6 +10,10 @@ export function numberToRoman(numero: number): string {
   if (numero >= 5) {
     numero = numero - 5;
     romanNumber += "V";
+  }
+
+  if (numero === 4) {
+    return (romanNumber += "IV");
   }
 
   return addStick(romanNumber, numero, start);
