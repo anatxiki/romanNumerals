@@ -28,7 +28,8 @@ export function numberToRoman(numero: number): string {
   }
 
   if (numero === 4) {
-    return (romanNumber += "IV");
+    numero = numero - 4;
+    romanNumber += "IV";
   }
 
   return addStick(romanNumber, numero, start);
