@@ -22,9 +22,8 @@ export function numberToRoman(numero: number): string {
     romanNumber += "X";
   }
 
-  if (numero == 9) {
-    numero -= 9;
-    romanNumber += "IX";
+  if (numero === 9) {
+    return (romanNumber += "IX");
   }
 
   if (numero >= 5) {
@@ -33,8 +32,7 @@ export function numberToRoman(numero: number): string {
   }
 
   if (numero === 4) {
-    numero -= 4;
-    romanNumber += "IV";
+    return (romanNumber += "IV");
   }
 
   return addStick(romanNumber, numero, start);
