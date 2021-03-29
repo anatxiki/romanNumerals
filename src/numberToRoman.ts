@@ -55,13 +55,14 @@ export function numberToRoman(numero: number): string {
     return (romanNumber += "IV");
   }
 
-  return addStick(romanNumber, numero, start);
+  return addStick(numero, romanNumber);
 }
 
-const addStick = (romanNumber: string, integerValue: number, start: number) => {
-  for (let i = start; i < integerValue; i++) {
-    romanNumber += "I";
+const addStick = (numero: number, romanNumber: string): any => {
+  if (numero === 0) {
+    return romanNumber;
   }
 
-  return romanNumber;
+  romanNumber += "I";
+  return addStick(numero - 1, romanNumber);
 };
