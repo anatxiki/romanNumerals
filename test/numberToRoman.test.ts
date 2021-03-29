@@ -22,6 +22,7 @@ describe("Número a romano", () => {
     [84, "LXXXIV"],
     [94, "XCIV"],
     [175, "CLXXV"],
+    [340, "CCCXL"],
   ])("debe convertir el número %d a %s", (value, expected) => {
     expect(numberToRoman(value)).toBe(expected);
   });

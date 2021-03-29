@@ -2,7 +2,7 @@ export function numberToRoman(numero: number): string {
   let romanNumber = "";
   let start = 0;
 
-  if (numero >= 100) {
+  while (numero >= 100) {
     numero -= 100;
     romanNumber += "C";
   }
