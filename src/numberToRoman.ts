@@ -58,7 +58,8 @@ export function numberToRoman(numero: number): string {
   }
 
   if (numero === 9) {
-    return (romanNumber += romanNumbers[9]);
+    numero -= 9;
+    romanNumber += romanNumbers[9];
   }
 
   if (numero >= 5) {
@@ -67,7 +68,8 @@ export function numberToRoman(numero: number): string {
   }
 
   if (numero === 4) {
-    return (romanNumber += romanNumbers[4]);
+    numero -= 4;
+    romanNumber += romanNumbers[4];
   }
 
   while (numero >= 1) {
