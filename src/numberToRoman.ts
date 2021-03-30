@@ -15,14 +15,14 @@ const breakNumbers: Array<[number, string]> = [
 ];
 
 export function numberToRoman(numero: number): string {
-  let result = "";
+  let traduccion = "";
 
   for (let [breakArabNumber, breakRomanNumber] of breakNumbers) {
     while (numero >= breakArabNumber) {
       numero -= breakArabNumber;
-      result += breakRomanNumber;
+      traduccion += breakRomanNumber;
     }
   }
 
-  return result;
+  return traduccion;
 }
