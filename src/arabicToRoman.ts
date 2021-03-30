@@ -59,15 +59,20 @@ const breakValues: Value[] = [
 ];
 
 export function arabicToRoman(arabic: number): string {
-  let roman = "";
-  let remaining = arabic;
-
-  for (let value of breakValues) {
-    while (remaining >= value.arabic) {
-      remaining -= value.arabic;
-      roman += value.roman;
+  return breakValues.reduce(
+    (accumulator, value) => {
+      return {
+        remaining:
+          accumulator.remaining -
+          value.arabic * Math.trunc(accumulator.remaining / value.arabic),
+        roman:
+          accumulator.roman +
+          value.roman.repeat(Math.trunc(accumulator.remaining / value.arabic)),
+      };
+    },
+    {
+      roman: "",
+      remaining: arabic,
     }
-  }
-
-  return roman;
+  ).roman;
 }
