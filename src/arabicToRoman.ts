@@ -58,7 +58,7 @@ const breakValues: Value[] = [
   },
 ];
 
-export function numberToRoman(numero: number): string {
+export function arabicToRoman(numero: number): string {
   let romanNumber = "";
 
   for (let currentNumber of breakValues) {
