@@ -1,4 +1,9 @@
-const romanNumbers = [
+interface Value {
+  arabic: number;
+  roman: string;
+}
+
+const breakValues: Value[] = [
   {
     arabic: 1000,
     roman: "M",
@@ -56,7 +61,7 @@ const romanNumbers = [
 export function numberToRoman(numero: number): string {
   let romanNumber = "";
 
-  for (let currentNumber of romanNumbers) {
+  for (let currentNumber of breakValues) {
     while (numero >= currentNumber.arabic) {
       numero -= currentNumber.arabic;
       romanNumber += currentNumber.roman;
