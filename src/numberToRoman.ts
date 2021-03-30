@@ -1,4 +1,4 @@
-const breakNumbers: Array<[number, string]> = [
+const numerosDeCorte: Array<[number, string]> = [
   [1000, "M"],
   [900, "CM"],
   [500, "D"],
@@ -17,10 +17,10 @@ const breakNumbers: Array<[number, string]> = [
 export function numberToRoman(numero: number): string {
   let traduccion = "";
 
-  for (let [breakArabNumber, breakRomanNumber] of breakNumbers) {
-    while (numero >= breakArabNumber) {
-      numero -= breakArabNumber;
-      traduccion += breakRomanNumber;
+  for (let [numeroDeCorteArabe, numeroDeCorteRomano] of numerosDeCorte) {
+    while (numero >= numeroDeCorteArabe) {
+      numero -= numeroDeCorteArabe;
+      traduccion += numeroDeCorteRomano;
     }
   }
 
