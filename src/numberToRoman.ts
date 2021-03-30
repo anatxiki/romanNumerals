@@ -18,13 +18,12 @@ const keys = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
 export function numberToRoman(numero: number): string {
   let romanNumber = "";
 
-  for (let i = 0; i < keys.length; i++) {
-    let arabNumber = keys[i];
-    while (numero >= arabNumber) {
-      numero -= arabNumber;
-      romanNumber += romanNumbers[arabNumber];
+  keys.forEach((key) => {
+    while (numero >= key) {
+      numero -= key;
+      romanNumber += romanNumbers[key];
     }
-  }
+  });
 
   return romanNumber;
 }
