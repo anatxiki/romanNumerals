@@ -61,13 +61,11 @@ const breakValues: Value[] = [
 export function arabicToRoman(arabic: number): string {
   return breakValues.reduce(
     (accumulator, value) => {
+      const repeats = Math.trunc(accumulator.remaining / value.arabic);
+
       return {
-        remaining:
-          accumulator.remaining -
-          value.arabic * Math.trunc(accumulator.remaining / value.arabic),
-        roman:
-          accumulator.roman +
-          value.roman.repeat(Math.trunc(accumulator.remaining / value.arabic)),
+        remaining: accumulator.remaining - value.arabic * repeats,
+        roman: accumulator.roman + value.roman.repeat(repeats),
       };
     },
     {
