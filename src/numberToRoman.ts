@@ -14,17 +14,17 @@ const romanNumbers = {
   1000: "M",
 };
 
-const keys = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+const breakNumbers = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
 
 export function numberToRoman(numero: number): string {
   let romanNumber = "";
 
-  keys.forEach((key) => {
-    while (numero >= key) {
-      numero -= key;
-      romanNumber += romanNumbers[key];
+  for (let currentNumber of breakNumbers) {
+    while (numero >= currentNumber) {
+      numero -= currentNumber;
+      romanNumber += romanNumbers[currentNumber];
     }
-  });
+  }
 
   return romanNumber;
 }
