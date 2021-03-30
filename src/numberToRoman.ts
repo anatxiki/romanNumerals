@@ -22,7 +22,7 @@ export function numberToRoman(numero: number): string {
   const decrementaValorANumero = (valor: number) => (numero -= valor);
 
   for (let [arabNumber, romanNumber] of breakNumbers) {
-    while (esMayorIgualQue(numero, arabNumber)) {
+    while (numero >= arabNumber) {
       decrementaValorANumero(arabNumber);
       agregaLetraANumeroRomano(romanNumber);
     }
@@ -30,6 +30,3 @@ export function numberToRoman(numero: number): string {
 
   return result;
 }
-
-const esMayorIgualQue = (operador1: number, operador2: number) =>
-  operador1 >= operador2;
