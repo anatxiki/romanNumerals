@@ -17,12 +17,19 @@ const breakNumbers: Array<[number, string]> = [
 export function numberToRoman(numero: number): string {
   let result = "";
 
+  const agregaLetraANumeroRomano = (letra: string) => (result += letra);
+
+  const decrementaValor = (valor: number) => (numero -= valor);
+
   for (let [arabNumber, romanNumber] of breakNumbers) {
-    while (numero >= arabNumber) {
-      numero -= arabNumber;
-      result += romanNumber;
+    while (esMayorIgualQue(numero, arabNumber)) {
+      decrementaValor(arabNumber);
+      agregaLetraANumeroRomano(romanNumber);
     }
   }
 
   return result;
 }
+
+const esMayorIgualQue = (operador1: number, operador2: number) =>
+  operador1 >= operador2;
