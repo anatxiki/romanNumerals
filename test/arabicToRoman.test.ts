@@ -1,4 +1,4 @@
-import { numberToRoman } from "../src/numberToRoman";
+import { arabicToRoman } from "../src/arabicToRoman";
 
 describe("Número a romano", () => {
   it.each([
@@ -28,7 +28,8 @@ describe("Número a romano", () => {
     [666, "DCLXVI"],
     [817, "DCCCXVII"],
     [919, "CMXIX"],
+    [2751, "MMDCCLI"],
   ])("debe convertir el número %d a %s", (value, expected) => {
-    expect(numberToRoman(value)).toBe(expected);
+    expect(arabicToRoman(value)).toBe(expected);
   });
 });
