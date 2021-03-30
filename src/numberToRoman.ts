@@ -14,12 +14,12 @@ const numerosDeCorte: Array<[number, string]> = [
   [1, "I"],
 ];
 
-export function numberToRoman(numero: number): string {
+export function numberToRoman(numeroArabeATraducir: number): string {
   let traduccion = "";
 
   for (let [numeroDeCorteArabe, numeroDeCorteRomano] of numerosDeCorte) {
-    while (numero >= numeroDeCorteArabe) {
-      numero -= numeroDeCorteArabe;
+    while (numeroArabeATraducir >= numeroDeCorteArabe) {
+      numeroArabeATraducir -= numeroDeCorteArabe;
       traduccion += numeroDeCorteRomano;
     }
   }
