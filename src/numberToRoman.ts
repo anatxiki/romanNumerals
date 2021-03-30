@@ -17,14 +17,10 @@ const breakNumbers: Array<[number, string]> = [
 export function numberToRoman(numero: number): string {
   let result = "";
 
-  const agregaLetraANumeroRomano = (letra: string) => (result += letra);
-
-  const decrementaValorANumero = (valor: number) => (numero -= valor);
-
-  for (let [arabNumber, romanNumber] of breakNumbers) {
-    while (numero >= arabNumber) {
-      decrementaValorANumero(arabNumber);
-      agregaLetraANumeroRomano(romanNumber);
+  for (let [breakArabNumber, breakRomanNumber] of breakNumbers) {
+    while (numero >= breakArabNumber) {
+      numero -= breakArabNumber;
+      result += breakRomanNumber;
     }
   }
 
