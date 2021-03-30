@@ -13,68 +13,18 @@ const romanNumbers = {
   900: "CM",
   1000: "M",
 };
+const keys = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
 
 export function numberToRoman(numero: number): string {
   let romanNumber = "";
 
-  if (numero >= 900) {
-    numero -= 900;
-    romanNumber += romanNumbers[900];
+  for (let i = 0; i < keys.length; i++) {
+    let arabNumber = keys[i];
+    while (numero >= arabNumber) {
+      numero -= arabNumber;
+      romanNumber += romanNumbers[arabNumber];
+    }
   }
 
-  if (numero >= 500) {
-    numero -= 500;
-    romanNumber += romanNumbers[500];
-  }
-
-  if (numero === 400) {
-    numero -= 400;
-    romanNumber += romanNumbers[400];
-  }
-
-  while (numero >= 100) {
-    numero -= 100;
-    romanNumber += romanNumbers[100];
-  }
-
-  if (numero >= 90) {
-    numero -= 90;
-    romanNumber += romanNumbers[90];
-  }
-
-  if (numero >= 50) {
-    numero -= 50;
-    romanNumber += romanNumbers[50];
-  }
-
-  if (numero >= 40) {
-    numero -= 40;
-    romanNumber += romanNumbers[40];
-  }
-
-  while (numero >= 10) {
-    numero -= 10;
-    romanNumber += romanNumbers[10];
-  }
-
-  if (numero === 9) {
-    numero -= 9;
-    romanNumber += romanNumbers[9];
-  }
-
-  if (numero >= 5) {
-    numero -= 5;
-    romanNumber += romanNumbers[5];
-  }
-
-  if (numero === 4) {
-    numero -= 4;
-    romanNumber += romanNumbers[4];
-  }
-
-  while (numero >= 1) {
-    numero -= 1;
-    romanNumber += romanNumbers[1];
-  }
   return romanNumber;
 }
