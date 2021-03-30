@@ -19,11 +19,11 @@ export function numberToRoman(numero: number): string {
 
   const agregaLetraANumeroRomano = (letra: string) => (result += letra);
 
-  const decrementaValor = (valor: number) => (numero -= valor);
+  const decrementaValorANumero = (valor: number) => (numero -= valor);
 
   for (let [arabNumber, romanNumber] of breakNumbers) {
     while (esMayorIgualQue(numero, arabNumber)) {
-      decrementaValor(arabNumber);
+      decrementaValorANumero(arabNumber);
       agregaLetraANumeroRomano(romanNumber);
     }
   }
