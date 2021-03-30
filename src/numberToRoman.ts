@@ -1,28 +1,65 @@
-const romanNumbers = {
-  1: "I",
-  4: "IV",
-  5: "V",
-  9: "IX",
-  10: "X",
-  40: "XL",
-  50: "L",
-  90: "XC",
-  100: "C",
-  400: "CD",
-  500: "D",
-  900: "CM",
-  1000: "M",
-};
-
-const breakNumbers = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+const romanNumbers = [
+  {
+    arabic: 1000,
+    roman: "M",
+  },
+  {
+    arabic: 900,
+    roman: "CM",
+  },
+  {
+    arabic: 500,
+    roman: "D",
+  },
+  {
+    arabic: 400,
+    roman: "CD",
+  },
+  {
+    arabic: 100,
+    roman: "C",
+  },
+  {
+    arabic: 90,
+    roman: "XC",
+  },
+  {
+    arabic: 50,
+    roman: "L",
+  },
+  {
+    arabic: 40,
+    roman: "XL",
+  },
+  {
+    arabic: 10,
+    roman: "X",
+  },
+  {
+    arabic: 9,
+    roman: "IX",
+  },
+  {
+    arabic: 5,
+    roman: "V",
+  },
+  {
+    arabic: 4,
+    roman: "IV",
+  },
+  {
+    arabic: 1,
+    roman: "I",
+  },
+];
 
 export function numberToRoman(numero: number): string {
   let romanNumber = "";
 
-  for (let currentNumber of breakNumbers) {
-    while (numero >= currentNumber) {
-      numero -= currentNumber;
-      romanNumber += romanNumbers[currentNumber];
+  for (let currentNumber of romanNumbers) {
+    while (numero >= currentNumber.arabic) {
+      numero -= currentNumber.arabic;
+      romanNumber += currentNumber.roman;
     }
   }
 
